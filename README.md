@@ -14,7 +14,7 @@ The implementation is based on the [krr-up/flatland](https://github.com/krr-up/f
 
 
 ### Single-shot encoding
-This is the simplest encoding approach, as `rs_singleshot.lp` contains the rules and logic to solve a problem instance (environment) in a single iteration without considering delays. The **HORIZON** defines the maximum number of time steps considered by the solver when generating the train schedule.
+This is the simplest encoding approach, it contains the rules and logic to solve a problem instance (environment) in a single iteration without considering malfunctions. The **HORIZON** defines the maximum number of time steps considered by the solver when generating the train schedule.
 
 `clingo rs_singleshot.lp ENVIROMENT.lp -c k=HORIZON`
 
