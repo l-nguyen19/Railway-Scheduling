@@ -20,7 +20,7 @@ This is the simplest encoding approach, as `rs_singleshot.lp` contains the rules
 
 
 ### Multi-shot encoding
-This approach solves the problem incrementally without requiring the **HORIZON** to be specified manually like in the Single-shot approach. The solver starts with a small horizon and incrementally increases it until a valid train schedule is found. This allows the code to automatically determine the minimum horizon required to find a solution.
+This approach solves the problem incrementally without requiring the **HORIZON** to be specified manually, unlike the single-shot approach. The solver starts with a small horizon and incrementally increases it until a valid train schedule is found. This allows the code to automatically determine the minimum horizon required to find a solution.
 
 `python rs_multishot.py rs_multishot.lp ENVIROMENT.lp`
 
