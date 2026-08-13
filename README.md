@@ -1,7 +1,6 @@
 # Railway-Scheduling
-This project generates train schedules in the [Flatland](https://flatland.aicrowd.com/intro.html) simulation using [Answer Set Programming (ASP)](https://potassco.org) and extends the planning model to account for [malfunctions](https://flatland-association.github.io/flatland-book/environment/environment/stochasticity.html). Malfunctions simulate delays by stopping trains at random times for random durations. During a malfunction, a train is unable to move for a random but known number of time steps, potentially blocking trains behind it. The solver takes these delays into account when generating a valid and convenient train schedule.
-
-This project is built on the [krr-up/flatland](https://github.com/krr-up/flatland) toolkit, which connects Python with ASP. It processes Flatland environments, translates them into logical facts, and visualizes the ASP-generated results as an animated simulation.
+The project uses [Answer Set Programming (ASP)](https://potassco.org) to plan train schedules in the [Flatland](https://flatland.aicrowd.com/intro.html) simulation while accounting for [malfunctions](https://flatland-association.github.io/flatland-book/environment/environment/stochasticity.html). Malfunctions simulate delays by stopping trains at random times for random durations. During a malfunction, a train is unable to move for a random but known number of time steps, potentially blocking trains behind it. The solver takes these delays into account when generating a valid and convenient train schedule.
+The implementation is based on the [krr-up/flatland](https://github.com/krr-up/flatland) toolkit, which connects Python with ASP. It processes Flatland environments, translates them into logical facts, and visualizes the ASP-generated results as an animated simulation.
 
 ## Encodings
 
