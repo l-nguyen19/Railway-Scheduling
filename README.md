@@ -16,14 +16,17 @@ The implementation is based on the [krr-up/flatland](https://github.com/krr-up/f
 ### Single-shot encoding
 This is the simplest encoding approach, it contains the rules and logic to solve a problem instance (environment) in a single iteration without considering malfunctions. The **HORIZON** defines the maximum number of time steps considered by the solver when generating the train schedule.
 
-`clingo rs_singleshot.lp ENVIROMENT.lp -c k=HORIZON`
+```
+clingo rs_singleshot.lp ENVIROMENT.lp -c k=HORIZON
+```
 
 
 ### Multi-shot encoding
 This approach solves the problem incrementally without requiring the **HORIZON** to be specified manually, unlike the single-shot approach. The solver starts with a small horizon and incrementally increases it until a valid train schedule is found. This allows the code to automatically determine the minimum horizon required to find a solution.
 
-`python rs_multishot.py rs_multishot.lp ENVIROMENT.lp`
-
+```
+python rs_multishot.py rs_multishot.lp ENVIROMENT.lp
+```
 
 ### Multi-shot encoding with delay and TPG
 This approach accounts for malfunctions and their resulting delays. Instead of adding delays to a completed schedule, the plan is executed step by step, allowing malfunctions to occur during execution and dynamically affect the schedule, similar to a real-world scenario.
