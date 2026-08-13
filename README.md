@@ -23,7 +23,7 @@ clingo rs_singleshot.lp ENVIROMENT.lp -c k=HORIZON
 <br>
 
 ### Multi-shot encoding
-This approach solves the problem incrementally without requiring the `HORIZON` to be specified manually, unlike the single-shot approach. The solver starts with a small horizon and incrementally increases it until a valid train schedule is found. This allows the code to automatically determine the minimum horizon required to find a solution.
+This approach solves the problem incrementally without requiring the `HORIZON` to be specified manually, unlike the single-shot approach. The Python script handles the automatic incrementing of the horizon. The solver starts with the smallest horizon and attempts to find a solution. If no solution is found, the horizon is incrementally increased until a valid train schedule is found. This allows the code to automatically determine the minimum horizon required to find a solution.
 
 ```
 python rs_multishot.py rs_multishot.lp ENVIROMENT.lp
