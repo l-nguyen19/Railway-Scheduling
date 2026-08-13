@@ -2,6 +2,7 @@
 The project uses [Answer Set Programming (ASP)](https://potassco.org) to plan train schedules in the [Flatland](https://flatland.aicrowd.com/intro.html) simulation while accounting for [malfunctions](https://flatland-association.github.io/flatland-book/environment/environment/stochasticity.html). Malfunctions simulate delays by stopping trains at random times for random durations. During a malfunction, a train is unable to move for a random but known number of time steps, potentially blocking trains behind it. The solver takes these delays into account when generating a valid and convenient train schedule.
 The implementation is based on the [krr-up/flatland](https://github.com/krr-up/flatland) toolkit, which connects Python with ASP. It processes Flatland environments, translates them into logical facts, and visualizes the ASP-generated results as an animated simulation.
 
+
 ## Encodings
 
 - `rs_singleshot.lp` — builds the track graph from environment facts
@@ -14,7 +15,7 @@ The implementation is based on the [krr-up/flatland](https://github.com/krr-up/f
 
 
 ### Single-shot encoding
-This is the simplest encoding approach, it contains the rules and logic to solve a problem instance (environment) in a single iteration without considering malfunctions. The **HORIZON** defines the maximum number of time steps considered by the solver when generating the train schedule.
+This is the simplest encoding approach, it contains the rules and logic to solve a problem instance (environment) in a single iteration without considering malfunctions. The `HORIZON` defines the maximum number of time steps considered by the solver when generating the train schedule.
 
 ```
 clingo rs_singleshot.lp ENVIROMENT.lp -c k=HORIZON
@@ -22,11 +23,12 @@ clingo rs_singleshot.lp ENVIROMENT.lp -c k=HORIZON
 
 
 ### Multi-shot encoding
-This approach solves the problem incrementally without requiring the **HORIZON** to be specified manually, unlike the single-shot approach. The solver starts with a small horizon and incrementally increases it until a valid train schedule is found. This allows the code to automatically determine the minimum horizon required to find a solution.
+This approach solves the problem incrementally without requiring the `HORIZON` to be specified manually, unlike the single-shot approach. The solver starts with a small horizon and incrementally increases it until a valid train schedule is found. This allows the code to automatically determine the minimum horizon required to find a solution.
 
 ```
 python rs_multishot.py rs_multishot.lp ENVIROMENT.lp
 ```
+
 
 ### Multi-shot encoding with delay and TPG
 This approach accounts for malfunctions and their resulting delays. Instead of adding delays to a completed schedule, the plan is executed step by step, allowing malfunctions to occur during execution and dynamically affect the schedule, similar to a real-world scenario.
