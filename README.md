@@ -2,6 +2,8 @@
 
 ## Encodings
 ### single-shot encoding
+This is the simplest encoding approach, as it attempts to solve a problem instance in a single iteration without considering delays.
+
 `clingo rs_singleshot.lp ENVIROMENT.lp -c k=HORIZON`
 
 
