@@ -38,7 +38,7 @@ To manage the temporal dependencies between trains, we use the idea of the [Temp
 
 The implementation is divided into two steps. First, an initial plan is generated for the Flatland problem, similar to the normal multi-shot approach. Second, the initial plan is executed step by step, while malfunctions and their resulting delays are introduced during execution. This allows the schedule to adapt dynamically to the delays that occur.
 
-Step 1 (generate initial plan)
+Step 1 (generate initial plan):
 ```
 python rs_multishot_initplan.py rs_multishot_initplan.lp ENVIROMENT.lp`
 ```
