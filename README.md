@@ -2,7 +2,8 @@
 
 ## Encodings
 ### single-shot encoding
-This is the simplest encoding approach, as it attempts to solve a problem instance in a single iteration without considering delays.
+This is the simplest encoding approach, as it attempts to solve a problem instance in a single iteration without considering delays. 
+The **HORIZON** defines the maximum number of time steps considered by the solver when generating the train schedule.
 
 `clingo rs_singleshot.lp ENVIROMENT.lp -c k=HORIZON`
 
