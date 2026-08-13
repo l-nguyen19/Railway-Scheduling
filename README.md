@@ -1,4 +1,7 @@
 # Railway-Scheduling
+[Answer Set Programming (ASP)](https://potassco.org)
+
+[Flatland (vehicle rescheduling problem)](https://flatland.aicrowd.com/intro.html)
 
 ## Encodings
 ### Single-shot encoding
