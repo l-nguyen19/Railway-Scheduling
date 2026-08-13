@@ -4,6 +4,16 @@
 [Flatland (vehicle rescheduling problem)](https://flatland.aicrowd.com/intro.html)
 
 ## Encodings
+
+- `rs_singleshot.lp` — builds the track graph from environment facts
+- `rs_multishot_initplan.lp` — route choice and action output
+- `rs_multishot_execution.lp` — auto-extracted waypoints per train
+- `rs_multishot.lp` — stations, required visits, visit order
+- `rs_multishot.py` — passenger itineraries and transfer validation
+- `rs_multishot_execution.py` — the cost layer: each convenience criterion is computed per train, multiplied by its profile weight, and minimized
+- `rs_multishot_initplan.py` — the cost layer: each convenience criterion is computed per train, multiplied by its profile weight, and minimized
+
+
 ### Single-shot encoding
 This is the simplest encoding approach, as `rs_singleshot.lp` contains the rules and logic to solve a problem instance (environment) in a single iteration without considering delays. The **HORIZON** defines the maximum number of time steps considered by the solver when generating the train schedule.
 
