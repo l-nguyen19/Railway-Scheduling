@@ -3,7 +3,7 @@
 
 [Flatland (vehicle rescheduling problem)](https://flatland.aicrowd.com/intro.html)
 
-This project tries conflict-free train schedules in the Flatland railway simulation using Answer Set Programming (ASP), and extends the planning with adding [malfunctions](https://flatland-association.github.io/flatland-book/environment/environment/stochasticity.html). Malfunctions simulate delays by stopping agents at random times for random durations. Trains that malfunction can’t move for a random, but known, number of steps. They of course block the trains following them. The code then returns the most convenient schedule instead of an arbitrary valid one.
+This project tries train schedules in the Flatland railway simulation using Answer Set Programming (ASP), and extends the planning with adding [malfunctions](https://flatland-association.github.io/flatland-book/environment/environment/stochasticity.html). Malfunctions simulate delays by stopping agents at random times for random durations. Trains that malfunction can’t move for a random, but known, number of steps. They of course block the trains following them. The code then returns the most convenient schedule instead of an arbitrary valid one.
 
 This project is built on the [krr-up/flatland](https://github.com/krr-up/flatland) toolkit, which connects Python with ASP. It processes Flatland environments, translates them into logical facts, and visualizes the ASP-generated results as an animated simulation.
 
