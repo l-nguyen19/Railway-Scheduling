@@ -26,14 +26,12 @@ This approach solves the problem incrementally without requiring the **HORIZON**
 
 
 ### Multi-shot encoding with delay and TPG
-[Temporal Plan Graph](https://ojs.aaai.org/index.php/ICAPS/article/view/13796)
-
 This approach accounts for malfunctions and their resulting delays. Instead of adding delays to a completed schedule, the plan is executed step by step, allowing malfunctions to occur during execution and dynamically affect the schedule, similar to a real-world scenario.
 
-To manage the temporal dependencies between trains, we use the idea of the Temporal Plan Graph (TPG), a data structure used in Multi-Agent Pathfinding (MAPF). The TPG represents the plan and maintains the temporal dependencies between agents as they move through different locations. Each agent must enter positions in the same order as specified in its original plan. Additionally, if two agents enter the same position, they must maintain the same order as in the original plan.
+To manage the temporal dependencies between trains, we use the idea of the [Temporal Plan Graph TPG](https://ojs.aaai.org/index.php/ICAPS/article/view/13796), a data structure used in Multi-Agent Pathfinding (MAPF). The TPG represents the plan and maintains the temporal dependencies between agents as they move through different locations. Each agent must enter positions in the same order as specified in its original plan. Additionally, if two agents enter the same position, they must maintain the same order as in the original plan.
 
 The implementation is divided into two steps. First, an initial plan is generated for the Flatland problem, similar to the normal multi-shot approach. Second, the initial plan is executed step by step, while malfunctions and their resulting delays are introduced during execution. This allows the schedule to adapt dynamically to the delays that occur.
 
-Step 1: `python rs_multishot_initplan.py rs_multishot_initplan.lp ENVIROMENT.lp`
+Step 1 (generate initial plan): `python rs_multishot_initplan.py rs_multishot_initplan.lp ENVIROMENT.lp`
 
-Step 2: `python rs_multishot_execution.py rs_multishot_execution.lp initplan.lp ENVIROMENT.lp`
+Step 2 (execute the initial plan and add delays): `python rs_multishot_execution.py rs_multishot_execution.lp initplan.lp ENVIROMENT.lp`
