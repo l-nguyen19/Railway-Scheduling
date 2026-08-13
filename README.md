@@ -5,12 +5,13 @@ The implementation is based on the [krr-up/flatland](https://github.com/krr-up/f
 ## Encodings
 
 - `rs_singleshot.lp` — defines train movements, track connections, and constraints for generating a valid schedule within a given horizon
-- `rs_multishot_initplan.lp` — incrementally generates an initial conflict-free train plan, enforcing valid movements, destination constraints, and collision avoidance.
-- `rs_multishot_execution.lp` — executes the initial plan while modeling delays and their effects on train positions and temporal ordering, while preventing collisions.
-- `rs_multishot.lp` — incrementally generates train schedules by adding one timestep at a time, while enforcing valid movements, destination constraints, and collision avoidance.
+- `rs_multishot.lp` — incrementally generates train schedules by adding one timestep at a time, defines train movements, track connections, and constraints
 - `rs_multishot.py` — controls the incremental solving process by automatically increasing the horizon and re-solving until a solution is found
-- `rs_multishot_execution.py` — controls the step-by-step execution, randomly generates malfunctions with random durations, adds the resulting delays to the ASP model, and checks the TPG and goal constraints.
-- `rs_multishot_initplan.py` — controls the incremental generation of the initial plan and saves the resulting ASP model to initplan.lp
+- `rs_multishot_initplan.lp` — incrementally generates train schedules by adding one timestep at a time, defines train movements, track connections, and constraints
+- `rs_multishot_initplan.py` — controls the incremental solving process by automatically increasing the horizon and re-solving until a solution is found and saves the resulting ASP model to initplan.lp
+- `rs_multishot_execution.lp` — executes the initial plan while modeling delays and their effects on train positions and temporal ordering, while preventing collisions.
+- `rs_multishot_execution.py` — execute the initial plan and randomly generates malfunctions with random durations, adds the resulting delays to the ASP model, and checks the TPG and goal constraints.
+
 
 
 ### Single-shot encoding
