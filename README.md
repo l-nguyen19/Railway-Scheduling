@@ -3,6 +3,8 @@
 
 [Flatland (vehicle rescheduling problem)](https://flatland.aicrowd.com/intro.html)
 
+This project is built on the [krr-up/flatland](https://github.com/krr-up/flatland) toolkit, which connects Python with ASP. It processes Flatland environments, translates them into logical facts, and visualizes the ASP-generated results as an animated simulation.
+
 ## Encodings
 
 - `rs_singleshot.lp` — builds the track graph from environment facts
