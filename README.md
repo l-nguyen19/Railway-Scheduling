@@ -32,7 +32,7 @@ python rs_multishot.py rs_multishot.lp ENVIROMENT.lp
 
 ### Multi-shot encoding with delay and TPG
 - `rs_multishot_initplan.lp` — incrementally generates train schedules by adding one timestep at a time, defines train movements, track connections, and constraints
-- `rs_multishot_initplan.py` — controls the incremental solving process by automatically increasing the horizon and re-solving until a solution is found and saves the resulting ASP model to initplan.lp
+- `rs_multishot_initplan.py` — controls the incremental solving process by automatically increasing the horizon and re-solving until a solution is found and saves the resulting ASP model to `initplan.lp`
 - `rs_multishot_execution.lp` — executes the initial plan while modeling delays and their effects on train positions and temporal ordering, while preventing collisions
 - `rs_multishot_execution.py` — execute the initial plan and randomly generates malfunctions with random durations, adds the resulting delays to the ASP model, and checks the TPG and goal constraints
 
