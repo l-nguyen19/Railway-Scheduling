@@ -12,6 +12,8 @@ This is the simplest encoding approach, as `rs_singleshot.lp` contains the rules
 
 
 ### Multi-shot encoding with delay and TPG
+\href{https://ojs.aaai.org/index.php/ICAPS/article/view/13796}{Temporal Plan Graph}
+
 Step 1: `python rs_multishot_initplan.py rs_multishot_initplan.lp ENVIROMENT.lp`
 
 Step 2: `python rs_multishot_execution.py rs_multishot_execution.lp initplan.lp ENVIROMENT.lp`
