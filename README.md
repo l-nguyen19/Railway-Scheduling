@@ -4,7 +4,7 @@ The implementation is based on the [krr-up/flatland](https://github.com/krr-up/f
 
 ## Encodings
 
-- `rs_singleshot.lp` — builds the track graph from environment facts
+- `rs_singleshot.lp` — defines train movements, track connections, and constraints for generating a valid schedule within a given horizon
 - `rs_multishot_initplan.lp` — route choice and action output
 - `rs_multishot_execution.lp` — auto-extracted waypoints per train
 - `rs_multishot.lp` — stations, required visits, visit order
